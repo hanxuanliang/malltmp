@@ -12,7 +12,6 @@ type PortalProductDetailResp {
 }
 
 
-
 service product-api {
 	@handler PortalProductDetail
 	get /product/detail/:productId returns(PortalProductDetailResp)
