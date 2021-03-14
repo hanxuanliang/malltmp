@@ -32,48 +32,48 @@ type (
 	}
 
 	PmsProduct struct {
-		BrandId                    sql.NullInt64   `db:"brand_id"`
-		ProductSn                  string          `db:"product_sn"`         // 货号
-		Description                string          `db:"description"`        // 商品描述
-		Weight                     sql.NullFloat64 `db:"weight"`             // 商品重量，默认为克
-		BrandName                  sql.NullString  `db:"brand_name"`         // 品牌名称
-		UsePointLimit              sql.NullInt64   `db:"use_point_limit"`    // 限制使用的积分数
-		ServiceIds                 sql.NullString  `db:"service_ids"`        // 以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮
-		AlbumPics                  sql.NullString  `db:"album_pics"`         // 画册图片，连产品图片限制为5张，以逗号分割
-		DetailHtml                 string          `db:"detail_html"`        // 产品详情网页内容
-		DetailMobileHtml           string          `db:"detail_mobile_html"` // 移动端网页详情
-		Pic                        sql.NullString  `db:"pic"`
-		RecommandStatus            sql.NullInt64   `db:"recommand_status"` // 推荐状态；0->不推荐；1->推荐
-		Price                      sql.NullFloat64 `db:"price"`
-		PromotionPrice             sql.NullFloat64 `db:"promotion_price"` // 促销价格
-		Stock                      sql.NullInt64   `db:"stock"`           // 库存
-		Keywords                   sql.NullString  `db:"keywords"`
-		PromotionPerLimit          sql.NullInt64   `db:"promotion_per_limit"` // 活动限购数量
-		Sale                       sql.NullInt64   `db:"sale"`                // 销量
-		FeightTemplateId           sql.NullInt64   `db:"feight_template_id"`
-		ProductAttributeCategoryId sql.NullInt64   `db:"product_attribute_category_id"`
-		Name                       string          `db:"name"`
-		PublishStatus              sql.NullInt64   `db:"publish_status"` // 上架状态：0->下架；1->上架
-		VerifyStatus               sql.NullInt64   `db:"verify_status"`  // 审核状态：0->未审核；1->审核通过
-		Sort                       sql.NullInt64   `db:"sort"`           // 排序
-		SubTitle                   sql.NullString  `db:"sub_title"`      // 副标题
-		PromotionType              sql.NullInt64   `db:"promotion_type"` // 促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购
-		Id                         int64           `db:"id"`
-		ProductCategoryId          sql.NullInt64   `db:"product_category_id"`
-		NewStatus                  sql.NullInt64   `db:"new_status"`  // 新品状态:0->不是新品；1->新品
-		GiftGrowth                 int64           `db:"gift_growth"` // 赠送的成长值
-		LowStock                   sql.NullInt64   `db:"low_stock"`   // 库存预警值
-		Note                       sql.NullString  `db:"note"`
-		DetailTitle                sql.NullString  `db:"detail_title"`
-		GiftPoint                  int64           `db:"gift_point"`     // 赠送的积分
-		OriginalPrice              sql.NullFloat64 `db:"original_price"` // 市场价
-		DetailDesc                 string          `db:"detail_desc"`
-		ProductCategoryName        sql.NullString  `db:"product_category_name"` // 商品分类名称
-		DeleteStatus               sql.NullInt64   `db:"delete_status"`         // 删除状态：0->未删除；1->已删除
-		Unit                       sql.NullString  `db:"unit"`                  // 单位
-		PreviewStatus              sql.NullInt64   `db:"preview_status"`        // 是否为预告商品：0->不是；1->是
-		PromotionStartTime         sql.NullTime    `db:"promotion_start_time"`  // 促销开始时间
-		PromotionEndTime           sql.NullTime    `db:"promotion_end_time"`    // 促销结束时间
+		Sale                       sql.NullInt64   `db:"sale" json:"sale"`                     // 销量
+		PreviewStatus              sql.NullInt64   `db:"preview_status" json:"preview_status"` // 是否为预告商品：0->不是；1->是
+		Keywords                   sql.NullString  `db:"keywords" json:"keywords"`
+		Note                       sql.NullString  `db:"note" json:"note"`
+		PromotionStartTime         sql.NullTime    `db:"promotion_start_time" json:"promotion_start_time"`   // 促销开始时间
+		ProductCategoryName        sql.NullString  `db:"product_category_name" json:"product_category_name"` // 商品分类名称
+		PromotionPrice             sql.NullFloat64 `db:"promotion_price" json:"promotion_price"`             // 促销价格
+		SubTitle                   sql.NullString  `db:"sub_title" json:"sub_title"`                         // 副标题
+		OriginalPrice              sql.NullFloat64 `db:"original_price" json:"original_price"`               // 市场价
+		ServiceIds                 sql.NullString  `db:"service_ids" json:"service_ids"`                     // 以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮
+		DetailTitle                sql.NullString  `db:"detail_title" json:"detail_title"`
+		ProductSn                  string          `db:"product_sn" json:"product_sn"` // 货号
+		Price                      sql.NullFloat64 `db:"price" json:"price"`
+		Stock                      sql.NullInt64   `db:"stock" json:"stock"` // 库存
+		DetailDesc                 string          `db:"detail_desc" json:"detail_desc"`
+		DetailMobileHtml           string          `db:"detail_mobile_html" json:"detail_mobile_html"` // 移动端网页详情
+		Id                         int64           `db:"id" json:"id"`
+		FeightTemplateId           sql.NullInt64   `db:"feight_template_id" json:"feight_template_id"`
+		ProductAttributeCategoryId sql.NullInt64   `db:"product_attribute_category_id" json:"product_attribute_category_id"`
+		PublishStatus              sql.NullInt64   `db:"publish_status" json:"publish_status"` // 上架状态：0->下架；1->上架
+		VerifyStatus               sql.NullInt64   `db:"verify_status" json:"verify_status"`   // 审核状态：0->未审核；1->审核通过
+		Name                       string          `db:"name" json:"name"`
+		Description                string          `db:"description" json:"description"`       // 商品描述
+		PromotionType              sql.NullInt64   `db:"promotion_type" json:"promotion_type"` // 促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购
+		Pic                        sql.NullString  `db:"pic" json:"pic"`
+		GiftGrowth                 int64           `db:"gift_growth" json:"gift_growth"`                 // 赠送的成长值
+		UsePointLimit              sql.NullInt64   `db:"use_point_limit" json:"use_point_limit"`         // 限制使用的积分数
+		AlbumPics                  sql.NullString  `db:"album_pics" json:"album_pics"`                   // 画册图片，连产品图片限制为5张，以逗号分割
+		PromotionPerLimit          sql.NullInt64   `db:"promotion_per_limit" json:"promotion_per_limit"` // 活动限购数量
+		Sort                       sql.NullInt64   `db:"sort" json:"sort"`                               // 排序
+		GiftPoint                  int64           `db:"gift_point" json:"gift_point"`                   // 赠送的积分
+		LowStock                   sql.NullInt64   `db:"low_stock" json:"low_stock"`                     // 库存预警值
+		BrandId                    sql.NullInt64   `db:"brand_id" json:"brand_id"`
+		ProductCategoryId          sql.NullInt64   `db:"product_category_id" json:"product_category_id"`
+		DeleteStatus               sql.NullInt64   `db:"delete_status" json:"delete_status"`           // 删除状态：0->未删除；1->已删除
+		NewStatus                  sql.NullInt64   `db:"new_status" json:"new_status"`                 // 新品状态:0->不是新品；1->新品
+		RecommandStatus            sql.NullInt64   `db:"recommand_status" json:"recommand_status"`     // 推荐状态；0->不推荐；1->推荐
+		Unit                       sql.NullString  `db:"unit" json:"unit"`                             // 单位
+		Weight                     sql.NullFloat64 `db:"weight" json:"weight"`                         // 商品重量，默认为克
+		DetailHtml                 string          `db:"detail_html" json:"detail_html"`               // 产品详情网页内容
+		PromotionEndTime           sql.NullTime    `db:"promotion_end_time" json:"promotion_end_time"` // 促销结束时间
+		BrandName                  sql.NullString  `db:"brand_name" json:"brand_name"`                 // 品牌名称
 	}
 )
 
@@ -86,7 +86,7 @@ func NewPmsProductModel(conn sqlx.SqlConn) PmsProductModel {
 
 func (m *defaultPmsProductModel) Insert(data PmsProduct) (sql.Result, error) {
 	query := fmt.Sprintf("insert into %s (%s) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", m.table, pmsProductRowsExpectAutoSet)
-	ret, err := m.conn.Exec(query, data.BrandId, data.ProductSn, data.Description, data.Weight, data.BrandName, data.UsePointLimit, data.ServiceIds, data.AlbumPics, data.DetailHtml, data.DetailMobileHtml, data.Pic, data.RecommandStatus, data.Price, data.PromotionPrice, data.Stock, data.Keywords, data.PromotionPerLimit, data.Sale, data.FeightTemplateId, data.ProductAttributeCategoryId, data.Name, data.PublishStatus, data.VerifyStatus, data.Sort, data.SubTitle, data.PromotionType, data.ProductCategoryId, data.NewStatus, data.GiftGrowth, data.LowStock, data.Note, data.DetailTitle, data.GiftPoint, data.OriginalPrice, data.DetailDesc, data.ProductCategoryName, data.DeleteStatus, data.Unit, data.PreviewStatus, data.PromotionStartTime, data.PromotionEndTime)
+	ret, err := m.conn.Exec(query, data.Sale, data.PreviewStatus, data.Keywords, data.Note, data.PromotionStartTime, data.ProductCategoryName, data.PromotionPrice, data.SubTitle, data.OriginalPrice, data.ServiceIds, data.DetailTitle, data.ProductSn, data.Price, data.Stock, data.DetailDesc, data.DetailMobileHtml, data.FeightTemplateId, data.ProductAttributeCategoryId, data.PublishStatus, data.VerifyStatus, data.Name, data.Description, data.PromotionType, data.Pic, data.GiftGrowth, data.UsePointLimit, data.AlbumPics, data.PromotionPerLimit, data.Sort, data.GiftPoint, data.LowStock, data.BrandId, data.ProductCategoryId, data.DeleteStatus, data.NewStatus, data.RecommandStatus, data.Unit, data.Weight, data.DetailHtml, data.PromotionEndTime, data.BrandName)
 	return ret, err
 }
 
@@ -106,7 +106,7 @@ func (m *defaultPmsProductModel) FindOne(id int64) (*PmsProduct, error) {
 
 func (m *defaultPmsProductModel) Update(data PmsProduct) error {
 	query := fmt.Sprintf("update %s set %s where `id` = ?", m.table, pmsProductRowsWithPlaceHolder)
-	_, err := m.conn.Exec(query, data.BrandId, data.ProductSn, data.Description, data.Weight, data.BrandName, data.UsePointLimit, data.ServiceIds, data.AlbumPics, data.DetailHtml, data.DetailMobileHtml, data.Pic, data.RecommandStatus, data.Price, data.PromotionPrice, data.Stock, data.Keywords, data.PromotionPerLimit, data.Sale, data.FeightTemplateId, data.ProductAttributeCategoryId, data.Name, data.PublishStatus, data.VerifyStatus, data.Sort, data.SubTitle, data.PromotionType, data.ProductCategoryId, data.NewStatus, data.GiftGrowth, data.LowStock, data.Note, data.DetailTitle, data.GiftPoint, data.OriginalPrice, data.DetailDesc, data.ProductCategoryName, data.DeleteStatus, data.Unit, data.PreviewStatus, data.PromotionStartTime, data.PromotionEndTime, data.Id)
+	_, err := m.conn.Exec(query, data.Sale, data.PreviewStatus, data.Keywords, data.Note, data.PromotionStartTime, data.ProductCategoryName, data.PromotionPrice, data.SubTitle, data.OriginalPrice, data.ServiceIds, data.DetailTitle, data.ProductSn, data.Price, data.Stock, data.DetailDesc, data.DetailMobileHtml, data.FeightTemplateId, data.ProductAttributeCategoryId, data.PublishStatus, data.VerifyStatus, data.Name, data.Description, data.PromotionType, data.Pic, data.GiftGrowth, data.UsePointLimit, data.AlbumPics, data.PromotionPerLimit, data.Sort, data.GiftPoint, data.LowStock, data.BrandId, data.ProductCategoryId, data.DeleteStatus, data.NewStatus, data.RecommandStatus, data.Unit, data.Weight, data.DetailHtml, data.PromotionEndTime, data.BrandName, data.Id)
 	return err
 }
 
